@@ -57,8 +57,8 @@ import lib.watchedlist.utils as utils
 try:
     import dropbox
     from dropbox.exceptions import ApiError as DropboxApiError
-    DROPBOX_APP_KEY = base64.b64decode("YmhkMnY4aGdzbXF3Y2d0").decode('ascii')
-    DROPBOX_APP_SECRET = base64.b64decode("dDJjZXBvZXZqcXl1Ym5k").decode('ascii')
+    DROPBOX_APP_KEY = '6lc8agzb6ev4npt'
+    DROPBOX_APP_SECRET = 'rr6z7hqu4pnhzqf'
     DROPBOX_ENABLED = True
 except BaseException:
     DROPBOX_ENABLED = False
