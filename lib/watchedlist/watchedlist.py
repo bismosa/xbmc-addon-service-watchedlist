@@ -654,12 +654,10 @@ class WatchedList:
                     for item in json_response['result'][searchkey]:
                         if self.monitor.abortRequested():
                             break
-                        if not 'uniqueid' in item:
-                            if modus == 'movie':
+                        if modus == 'movie':
+                            if not 'uniqueid' in item:
                                 utils.log(u'get_watched_xbmc: Movie %s has no field uniqueid in database. Try rescraping.' % (item['title']), xbmc.LOGINFO)
-                            else:  # episode
-                                utils.log(u'get_watched_xbmc: Episode id %d (show %d, S%02dE%02d) has no field uniqueid in database. Try rescraping.' % (item['episodeid'], item['tvshowid'], item['season'], item['episode']), xbmc.LOGINFO)
-                            continue
+                                continue
                         if modus == 'movie':
                             name = item['title'] + ' (' + str(item['year']) + ')'
                             try:
